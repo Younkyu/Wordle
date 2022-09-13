@@ -1,0 +1,13 @@
+img {
+    max-width: 30px;
+    color: #ffffff;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.btn {
+    border: none;
+    background-color: #ffffff;
+}

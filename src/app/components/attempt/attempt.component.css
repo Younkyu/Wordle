@@ -1,0 +1,10 @@
+.letterBox {
+    border: 2px solid #cecece;
+    text-align: center;
+    width: 7vw;
+    height: 7vh;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 3.2vw;
+}
