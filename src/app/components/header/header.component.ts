@@ -17,8 +17,9 @@ export class HeaderComponent implements OnInit {
     console.log("Toggle Settings");
   }
 
-  toggleBurger() {
-    console.log("Toggle Hamburger Menu");
+  toggleRefresh() {
+    console.log("Toggle Refresh");
+    location.reload();
   }
 
 }
