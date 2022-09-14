@@ -1,11 +1,11 @@
 <div id="vertical-flex">
     <section id="attempts">
-        <app-attempt class="row" rowNum="row0" ready="{{ ready0 }}" (changeReady)="toggleReady0()"></app-attempt>
-        <app-attempt class="row" rowNum="row1" ready="{{ ready1 }}" (changeReady)="toggleReady1()"></app-attempt>
-        <app-attempt class="row" rowNum="row2" ready="{{ ready2 }}" (changeReady)="toggleReady2()"></app-attempt>
-        <app-attempt class="row" rowNum="row3" ready="{{ ready3 }}" (changeReady)="toggleReady3()"></app-attempt>
-        <app-attempt class="row" rowNum="row4" ready="{{ ready4 }}" (changeReady)="toggleReady4()"></app-attempt>
-        <app-attempt class="row" rowNum="row5" ready="{{ ready5 }}" (changeReady)="toggleReady5()"></app-attempt>
+        <app-attempt id="row0" class="row" rowNum="row0" ready="{{ ready0 }}" (changeReady)="toggleReady0()" (finish)="toggleWin()"></app-attempt>
+        <app-attempt id="row1" class="row" rowNum="row1" ready="{{ ready1 }}" (changeReady)="toggleReady1()" (finish)="toggleWin()"></app-attempt>
+        <app-attempt id="row2" class="row" rowNum="row2" ready="{{ ready2 }}" (changeReady)="toggleReady2()" (finish)="toggleWin()"></app-attempt>
+        <app-attempt id="row3" class="row" rowNum="row3" ready="{{ ready3 }}" (changeReady)="toggleReady3()" (finish)="toggleWin()"></app-attempt>
+        <app-attempt id="row4" class="row" rowNum="row4" ready="{{ ready4 }}" (changeReady)="toggleReady4()" (finish)="toggleWin()"></app-attempt>
+        <app-attempt id="row5" class="row" rowNum="row5" ready="{{ ready5 }}" (changeReady)="toggleReady5()" (finish)="toggleWin()"></app-attempt>
     </section>
     <section id="keyboard">
         <div>

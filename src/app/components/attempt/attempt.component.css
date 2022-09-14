@@ -1,10 +1,28 @@
 .letterBox {
     border: 2px solid #cecece;
+    display: flex;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     width: 7vw;
-    height: 7vh;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    font-size: 3.2vw;
+    height: 8vh;
+    font-size: 2.5vw;
+    font-weight: 700;
+}
+
+.partiallyCorrect {
+    background-color: #cdac00;
+}
+
+.fullyCorrect {
+    background-color: #66b21b;
+}
+
+.wrong {
+    background-color: #808080;
+}
+
+.partiallyCorrect, .fullyCorrect, .wrong {
+    color: #ffffff;
+    border: none;
 }
