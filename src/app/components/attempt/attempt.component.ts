@@ -31,23 +31,21 @@ export class AttemptComponent implements OnInit {
 
   checkWord() {
     var divs = document.getElementById("" + this.rowNum)?.querySelectorAll(".letterBox");
-    var wordArray = this.word.split('');
-    // in case for multiple yellow marks when there should be only one yellow
-    for (let x = 0; x < 5; x++) {
-      if(wordArray.includes(BodyComponent.wordle.charAt(x))) {
-        wordArray.splice(wordArray.indexOf(BodyComponent.wordle.charAt(x)), 1);
+    var temp = BodyComponent.wordle.split('');
+    // catch special cases (i.e. multiple misplaced letters of the same kind)
+    // iterate through the original word to match correct letters
+    for (let i = 0; i < 5; i++) {
+      if (this.word.charAt(i) === BodyComponent.wordle.charAt(i)) {
+        temp[i] = '.';
       }
     }
     // colorcode letter boxes
     for(let i = 0; i < 5; i++) {
-      if (this.word.charAt(i) === BodyComponent.wordle.charAt(i)) {
+      if (temp[i] === '.') {
         divs?.item(i).classList.add('fullyCorrect');
-      } else if (BodyComponent.wordle.indexOf(this.word.charAt(i)) !== -1) {
-        if (wordArray.includes(this.word.charAt(i))) {
-          divs?.item(i).classList.add('wrong');
-        } else {
-          divs?.item(i).classList.add('partiallyCorrect');
-        }
+      } else if (temp.includes(this.word.charAt(i))) {
+        divs?.item(i).classList.add('partiallyCorrect');
+        temp[temp.indexOf(this.word.charAt(i))] = ',';
       } else {
         divs?.item(i).classList.add('wrong');
       }
