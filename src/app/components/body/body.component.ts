@@ -6,6 +6,7 @@ import { Component, OnInit, HostListener, Input } from '@angular/core';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
+  // input data
   @Input() key: string | undefined;
   @Input() ready0: string = "yes";
   @Input() ready1: string = "no";
@@ -13,6 +14,7 @@ export class BodyComponent implements OnInit {
   @Input() ready3: string = "no";
   @Input() ready4: string = "no";
   @Input() ready5: string = "no";
+  
 
   // answer options
   static dictionary = ['ABUSE', 'ADULT', 'AGENT', 'ANGER', 'APPLE', 'AWARD', 'BASIS', 'BEACH', 'BENCH', 'BIPED',
@@ -22,7 +24,7 @@ export class BodyComponent implements OnInit {
                         'DEATH', 'DEPTH', 'DOUBT', 'DRAFT', 'DRAMA', 'DREAM', 'DRESS', 'DRINK', 'DRIVE', 'EARTH',
                         'ENEMY', 'ENTRY', 'ERROR', 'EVENT', 'FAITH', 'FAULT', 'FIELD', 'FIGHT', 'FINAL', 'FLOOR',
                         'FOCUS', 'FORCE', 'FRAME', 'FRANK', 'FRONT', 'FRUIT', 'GLASS', 'GRANT', 'GRASS', 'GREEN',
-                        'GROUP', 'GUIDE', 'HEART', 'HENRY', 'HORSE', 'HOTEL', 'HOUSE', 'IMAGE', 'INDEX', 'INPUT',
+                        'GROUP', 'GUIDE', 'HEART', 'HINGE', 'HORSE', 'HOTEL', 'HOUSE', 'IMAGE', 'INDEX', 'INPUT',
                         'ISSUE', 'JAPAN', 'JONES', 'JUDGE', 'KNIFE', 'LAURA', 'LAYER', 'LEVEL', 'LEWIS', 'LIGHT',
                         'LIMIT', 'LUNCH', 'MAJOR', 'MARCH', 'MATCH', 'METAL', 'MODEL', 'MONEY', 'MONTH', 'MOTOR',
                         'MOUTH', 'MUSIC', 'NIGHT', 'NOISE', 'NORTH', 'NOVEL', 'NURSE', 'OFFER', 'ORDER', 'OTHER',
@@ -38,12 +40,15 @@ export class BodyComponent implements OnInit {
                         'UNITY', 'VALUE', 'VIDEO', 'VISIT', 'VOICE', 'WASTE', 'WATCH', 'WATER', 'WHILE', 'WHITE',
                         'WHOLE', 'WOMAN', 'WORDS', 'WORLD', 'WORRY', 'WORST', 'YIELD', 'YOUNG', 'YOUTH', 'ZONES'];
 
+  // selected answer
   static wordle = BodyComponent.dictionary[Math.floor(Math.random() * BodyComponent.dictionary.length)];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  // private methods
 
   toggleReady0() {
     if (this.ready0 === "yes" && this.ready1 === "no" && this.ready2 === "no" && this.ready3 === "no" && this.ready4 === "no" && this.ready5 === "no") {

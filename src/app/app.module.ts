@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
 import { BodyComponent } from './components/body/body.component';
 import { AttemptComponent } from './components/attempt/attempt.component';
+import { KeyboardComponent } from './components/keyboard/keyboard.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AttemptComponent } from './components/attempt/attempt.component';
     HeaderComponent,
     ButtonComponent,
     BodyComponent,
-    AttemptComponent
+    AttemptComponent,
+    KeyboardComponent
   ],
   imports: [
     BrowserModule,

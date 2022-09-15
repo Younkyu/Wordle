@@ -9,6 +9,8 @@ export class ButtonComponent implements OnInit {
   @Input() label: string | undefined;
   @Input() icon: string | undefined;
   @Input() idVal: string | undefined;
+  @Input() text: string | undefined;
+  @Input() classVal: string | undefined;
 
   @Output() btnClick = new EventEmitter();
 

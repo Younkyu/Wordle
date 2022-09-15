@@ -41,12 +41,26 @@ export class AttemptComponent implements OnInit {
     }
     // colorcode letter boxes
     for(let i = 0; i < 5; i++) {
+      var keyboardDiv = document.getElementById("letter" + this.word.charAt(i));
       if (temp[i] === '.') {
+        // CORRECT
         divs?.item(i).classList.add('fullyCorrect');
+        if (!keyboardDiv?.classList.contains('green')) {
+          keyboardDiv?.classList.remove('yellow');
+          keyboardDiv?.classList.add('green');
+        }
       } else if (temp.includes(this.word.charAt(i))) {
+        // PARTIALLY CORRECT
         divs?.item(i).classList.add('partiallyCorrect');
         temp[temp.indexOf(this.word.charAt(i))] = ',';
+        if (!keyboardDiv?.classList.contains('green') && !keyboardDiv?.classList.contains('yellow') && !keyboardDiv?.classList.contains('grey')) {
+          keyboardDiv?.classList.add('yellow');
+        }
       } else {
+        // WRONG
+        if (!keyboardDiv?.classList.contains('grey') && !keyboardDiv?.classList.contains('green') && !keyboardDiv?.classList.contains('yellow')) {
+          keyboardDiv?.classList.add('grey');
+        }
         divs?.item(i).classList.add('wrong');
       }
     }
@@ -56,6 +70,7 @@ export class AttemptComponent implements OnInit {
     }
   }
 
+  // keyboard typing
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (this.ready === 'yes') {

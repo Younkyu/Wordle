@@ -3,11 +3,53 @@ img {
     color: #ffffff;
 }
 
-img:hover {
+:hover {
     cursor: pointer;
 }
 
 .btn {
     border: none;
     background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letterBtn {
+    width: 3vw;
+    height: 7vh;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.enterBtn {
+    width: 5vw;
+    height: 7vh;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.backspaceBtn {
+    width: 5vw;
+    height: 7vh;
+    border-radius: 5px;
+}
+
+.untyped {
+    background-color: #cecece;
+}
+
+.green {
+    background-color: #66b21b;
+    color: #ffffff
+}
+
+.yellow {
+    background-color: #cdac00;
+    color: #ffffff
+}
+
+.grey {
+    background-color: #808080;
+    color: #ffffff
 }
