@@ -35,8 +35,11 @@ export class AttemptComponent implements OnInit {
     // catch special cases (i.e. multiple misplaced letters of the same kind)
     // iterate through the original word to match correct letters
     for (let i = 0; i < 5; i++) {
+      var keyboardDiv = document.getElementById("letter" + this.word.charAt(i));
       if (this.word.charAt(i) === BodyComponent.wordle.charAt(i)) {
         temp[i] = '.';
+        keyboardDiv?.classList.remove('yellow');
+        keyboardDiv?.classList.add('green');
       }
     }
     // colorcode letter boxes
