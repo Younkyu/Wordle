@@ -7,6 +7,9 @@
         <app-attempt id="row4" class="row" rowNum="row4" ready="{{ ready4 }}" (changeReady)="toggleReady4()" (finish)="toggleWin()"></app-attempt>
         <app-attempt id="row5" class="row" rowNum="row5" ready="{{ ready5 }}" (changeReady)="toggleReady5()" (finish)="toggleWin()"></app-attempt>
     </section>
+    <section id="popupWindow">
+        <app-popup id="popup" class="hidden" msg="{{ result }}" answer="{{ answer }}"></app-popup>
+    </section>
     <section id="keyboard">
         <app-keyboard id="keyboard-layout"></app-keyboard>
     </section>

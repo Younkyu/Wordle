@@ -14,7 +14,8 @@ export class BodyComponent implements OnInit {
   @Input() ready3: string = "no";
   @Input() ready4: string = "no";
   @Input() ready5: string = "no";
-  
+  @Input() answer: string = "";
+  @Input() result: string = "";
 
   // answer options
   static dictionary = ['ABUSE', 'ADULT', 'AGENT', 'ANGER', 'APPLE', 'AWARD', 'BASIS', 'BEACH', 'BENCH', 'BIPED',
@@ -46,6 +47,7 @@ export class BodyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.answer = BodyComponent.wordle;
   }
 
   // private methods
@@ -88,6 +90,8 @@ export class BodyComponent implements OnInit {
   toggleReady5() {
     if (this.ready0 === "no" && this.ready1 === "no" && this.ready2 === "no" && this.ready3 === "no" && this.ready4 === "no" && this.ready5 === "yes") {
       this.ready5 = "no";
+      this.result = "Nice Try";
+      this.togglePopup();
       console.log("EOG: LOSS\nANSWER: " + BodyComponent.wordle);
     }
   }
@@ -99,7 +103,14 @@ export class BodyComponent implements OnInit {
     this.ready3 = "no";
     this.ready4 = "no";
     this.ready5 = "no";
+    this.result = "Great Job!";
+    this.togglePopup();
     console.log("EOG: WIN");
+  }
+
+  togglePopup() {
+    document.getElementById('popup')?.classList.toggle('shown');
+    document.getElementById('popup')?.classList.toggle('hidden');
   }
 
 }

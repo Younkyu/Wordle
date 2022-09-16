@@ -1,0 +1,12 @@
+#replay {
+    text-decoration: underline;
+    margin-top: 3vh;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: 800;
+}
+
+#replay:hover {
+    color: #66b21b;
+}
